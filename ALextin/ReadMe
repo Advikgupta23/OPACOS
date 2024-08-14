@@ -1,0 +1,16 @@
+
+
+in both extin.pro and extinspiral.pro I have changed the adopted distance of 
+the Sun to the Galactic centre, using the preferred value of 8.27 kpc from 
+Schoenrich (2012,MNRAS, 427,274). Notice that the geometrical scale of these 
+models is poorly know: usually it's better to have some sort of constraint on 
+reddening in the field studied, and to recalibrate/rescale the reddening maps 
+upon this constraint.
+
+
+
+
+
+
+
+
