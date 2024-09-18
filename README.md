@@ -55,6 +55,7 @@ To Run OPACOS it is quite straightforward, although sooner we will further strea
 - At the end you will get the approprite parameter distributions that you require.
 - An example of the distribution is shown below:
 
+
 ![Alt text](./Example_images/4.5_-72.5_age_data.jpeg)
 
 
