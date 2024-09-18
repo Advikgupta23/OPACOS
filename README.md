@@ -66,8 +66,6 @@ The above distributions are calculated keeping around the galactic long. and lat
 
 The above distributions are calculated keeping around the galactic long. and lat. values as (l,b) = (63.0,-12.0). The fist distribution above is of the GALAH feh distribution whereas the second distribution is the synthetic distribution that we got from our framework.
 
-- Similarly one more 
-
 
 
  
