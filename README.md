@@ -21,7 +21,7 @@ Download the zip file in the desired folder.
    ```data = ebf.read('/user/GalaxiaData/Examples/galaxy1.ebf','/')```
    
   here instead of user you will set the location of the GalaxiaData folder that you installed in the last step.
-  
+- Refer to Survey_DATA.dat file and install the data files as mentioned in it as it would be used to extract data to be worked on. Install both the files in the main directory that is just outside Survey_DATA.dat file
 
  
 # OPACOS
