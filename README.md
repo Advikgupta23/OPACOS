@@ -57,6 +57,7 @@ To Run OPACOS it is quite straightforward, although sooner we will further strea
 
 
 <img src="./Example_images/4.5_-72.5_age_data.jpeg" alt="Project Diagram" width="400" />
+<img src="./Example_images/4.5_-72.5_age_framework.jpeg" alt="Project Diagram" width="400" />
 
 
 
