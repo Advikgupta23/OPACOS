@@ -50,7 +50,7 @@ To Run OPACOS it is quite straightforward, although sooner we will further strea
 - Whereas if you want to generate the synthetic metallcity distribution then you need to set **bin_along_distance_age** value as **True** otherwise **False**.
 - After setting all the above input settings you can simply go to command line and run:
 
-  ```python Calculate_pdf.py**
+  ```python Calculate_pdf.py```
   
 - At the end you will get the approprite parameter distributions that you require.
 - An example of the distribution is shown below:
