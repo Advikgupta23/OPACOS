@@ -56,7 +56,7 @@ To Run OPACOS it is quite straightforward, although sooner we will further strea
 - An example of the distribution is shown below:
 
 
-![Alt text](./Example_images/4.5_-72.5_age_data.jpeg)
+<img src="./Example_images/4.5_-72.5_age_data.jpeg" alt="Project Diagram" width="400" />
 
 
 
