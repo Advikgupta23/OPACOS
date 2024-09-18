@@ -53,11 +53,20 @@ To Run OPACOS it is quite straightforward, although sooner we will further strea
   ```python Calculate_pdf.py```
   
 - At the end you will get the approprite parameter distributions that you require.
-- An example of the distribution is shown below:
+- An example of the age distribution is shown below:
 
 
 <img src="./Example_images/4.5_-72.5_age_data.jpeg" alt="Project Diagram" width="400" />
 <img src="./Example_images/4.5_-72.5_age_framework.jpeg" alt="Project Diagram" width="400" />
+
+The above distributions are calculated keeping around the galactic long. and lat. values as (l,b) = (4.5,-72.5). The fist distribution above is of the GAIA data age distribution whereas the second distribution is the synthetic distribution that we got from our framework.
+
+<img src="./Example_images/63.0_-12.0_feh_data.jpeg" alt="Project Diagram" width="400" />
+<img src="./Example_images/63.0_-12.0_feh_framework.jpeg" alt="Project Diagram" width="400" />
+
+The above distributions are calculated keeping around the galactic long. and lat. values as (l,b) = (63.0,-12.0). The fist distribution above is of the GALAH feh distribution whereas the second distribution is the synthetic distribution that we got from our framework.
+
+- Similarly one more 
 
 
 
