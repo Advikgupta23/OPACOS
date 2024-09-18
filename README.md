@@ -24,7 +24,14 @@ Download the zip file in the desired folder.
   
 - Refer to **Survey_DATA.dat** file and install the data files as mentioned in it as it would be used to extract data to be worked on. Install both the files in the main directory that is just outside **Survey_DATA.dat** file.
 
-<h2>Running OPACOS</h2>
+<h2>Running OPACOS:</h2>
+
+To Run OPACOS it is quite straightforward, although sooner we will further streamline the process. To run OPACOS we need to do folow following steps:
+
+- Generate the stars in Milky Way galaxy using GALAXIA. To do that go inside GalaxiaData folder that must have been created as mention in GALAXIA doxumentation. Then go to Examples and open myparameterfile in it. Once it is open set the location of the center of the cone that you want to simulate the stars in along with the area that you are interested in. 
+- Make sure that the circular patch option is selected instead of all sky survey in myparameter file.
+- After setting that run ```galaxia -r myparameterfile``` command in terminal inside the Examples folder to generate stars of galaxy which is stored in galaxy1.ebf file.
+- Now you need to  
 
  
 # OPACOS
