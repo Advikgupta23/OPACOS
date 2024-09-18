@@ -16,12 +16,13 @@ Download the zip file in the desired folder.
 
    ```tar gz -xvf OPACOS-main.zip```
 - After doing it follow the documentation as mentioned ahead in-order to install the GALAXIA code: https://galaxia.sourceforge.net/
-- Open the galaxy1.py file and change the data variable to:
+- Open the *galaxy1.py* file and change the data variable to:
 
    ```data = ebf.read('/user/GalaxiaData/Examples/galaxy1.ebf','/')```
    
-  here instead of user you will set the location of the GalaxiaData folder that you installed in the last step.
-- Refer to Survey_DATA.dat file and install the data files as mentioned in it as it would be used to extract data to be worked on. Install both the files in the main directory that is just outside Survey_DATA.dat file
+  here instead of user you will set the location of the GalaxiaData folder that you installed in the last step. The galaxy1.py file uses the GALAXIA code results stored in galaxy1.ebf files , reads it and stores the appropriate parameters useful for us in the *galaxia.dat* file.
+  
+- Refer to *Survey_DATA.dat* file and install the data files as mentioned in it as it would be used to extract data to be worked on. Install both the files in the main directory that is just outside Survey_DATA.dat file
 
  
 # OPACOS
