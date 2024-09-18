@@ -8,7 +8,17 @@ The above framework is divided into two components:
 - The first component which uses the extinction code ALextin and the probability calculation code that we created and calculates the probability of observing stars.
 - The second component which uses the probability along with the GALAXIA code results in order to simulate the parameter distribution of stars that we would observe. Here GALAXIA is a simulation code which simulates the Galaxy for us which we sample for pur use.
 
-<h2>**Installation**</h2>
+<h2>Installation:</h2>
+
+Download the zip file in the desired folder.
+
+- Unzip the file using command:
+   ```tar gz -xvf OPACOS-main.zip```
+- After doing it follow the documentation as mentioned ahead in-order to install the GALAXIA code: https://galaxia.sourceforge.net/
+- Open the galaxy1.py file and change the data variable to:
+   ```data = ebf.read('/user/GalaxiaData/Examples/galaxy1.ebf','/')```
+  here instead of user you will set the location of the GalaxiaData folder that you installed in the last step.
+  
 
  
 # OPACOS
