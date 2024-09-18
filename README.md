@@ -13,10 +13,13 @@ The above framework is divided into two components:
 Download the zip file in the desired folder.
 
 - Unzip the file using command:
+
    ```tar gz -xvf OPACOS-main.zip```
 - After doing it follow the documentation as mentioned ahead in-order to install the GALAXIA code: https://galaxia.sourceforge.net/
 - Open the galaxy1.py file and change the data variable to:
+
    ```data = ebf.read('/user/GalaxiaData/Examples/galaxy1.ebf','/')```
+   
   here instead of user you will set the location of the GalaxiaData folder that you installed in the last step.
   
 
