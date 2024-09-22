@@ -1,12 +1,12 @@
 # OPACOS
 
-The framework developed is useful in order to get the probability distribution of parameter of stars in Milky Way as observed by us synthetically for a section of our Sky. Using above framework we can get the ditribution function of parameters for a section of sky which can be used as a prior in Galactic surveys.
+The framework developed is helpful in getting probability distribution of parameters of stars in the Milky Way as observed by us synthetically for a section of our Sky. Using above framework we can get the ditribution function of parameters for a section of sky which can be used as a prior in Galactic surveys.
 
-Our framework can be used to get the probability distribution of metallicity or age given priors of (age,distance) or (metallicity, distance) respectively. It accounts for selection effects and generates a probabilty distribution of parameters as would be seen by us for a section of sky.
+Our framework can be used to get the probability distribution of metallicity or age given priors of (age,distance) or (metallicity, distance) respectively. It accounts for selection effects and generates a probability distribution of parameters as would be seen by us for a section of sky.
 
 The above framework is divided into two components:
 - The first component which uses the extinction code ALextin and the probability calculation code that we created and calculates the probability of observing stars.
-- The second component which uses the probability along with the GALAXIA code results in order to simulate the parameter distribution of stars that we would observe. Here GALAXIA is a simulation code which simulates the Galaxy for us which we sample for pur use.
+- The second component which uses the probability along with the GALAXIA code results in order to simulate the parameter distribution of stars that we would observe. Here GALAXIA is a simulation code which simulates the Galaxy for us which we sample as per our use.
 
 <h2>Installation:</h2>
 
@@ -40,7 +40,7 @@ To Run OPACOS it is quite straightforward, although sooner we will further strea
   
   ```python data_cube.py```
   
-- After doing this we are done with the probability calaculation grid and it is stored in **results.dat** file. This probability grid will be used along with galaxy data stored in **galaxia.dat** in order to get the required parameter distribution.
+- After doing this we are done with the probability calculation grid and it is stored in **results.dat** file. This probability grid will be used along with galaxy data stored in **galaxia.dat** in order to get the required parameter distribution.
 
 - Now what is left is to go through the **Read_fits.ipynb** to get the priors as discussed in the introduction. 
 - Go through the **Read_fiits.ipynb** and set the center coordinates of the sky for the cone of interest. We also change the area, both the changes are to be done as we have set the settings while simulating galaxy that is same values as that in **myparamterfile**.
@@ -59,12 +59,12 @@ To Run OPACOS it is quite straightforward, although sooner we will further strea
 <img src="./Example_images/4.5_-72.5_age_data.jpeg" alt="Project Diagram" width="400" />
 <img src="./Example_images/4.5_-72.5_age_framework.jpeg" alt="Project Diagram" width="400" />
 
-The above distributions are calculated keeping around the galactic long. and lat. values as (l,b) = (4.5,-72.5). The fist distribution above is of the GAIA data age distribution whereas the second distribution is the synthetic distribution that we got from our framework.
+The above distributions are calculated around the galactic long. and lat. values of (l,b) = (4.5,-72.5). The first distribution above is of the GAIA data age distribution whereas the second distribution is the synthetic distribution that we got from our framework.
 
 <img src="./Example_images/63_-12_feh_data.jpeg" alt="Project Diagram" width="400" />
 <img src="./Example_images/63_-12_feh_framework.jpeg" alt="Project Diagram" width="400" />
 
-The above distributions are calculated keeping around the galactic long. and lat. values as (l,b) = (63.0,-12.0). The fist distribution above is of the GALAH feh distribution whereas the second distribution is the synthetic distribution that we got from our framework.
+The above distributions are calculated around the galactic long. and lat. values of (l,b) = (63.0,-12.0). The first distribution above is of the GALAH feh distribution whereas the second distribution is the synthetic distribution that we got from our framework.
 
 
 
