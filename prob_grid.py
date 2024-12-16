@@ -83,7 +83,7 @@ def inter_rout(x1, y1, x2, y2, x):
     y = ( (y2-y1)/(x2-x1) ) * (x-x1) + y1
     return y
 
-with open('test_results.dat', 'w') as f:
+with open('Results.dat', 'w') as f:
 
     f.write(f'# stars {nstars}\n')
     if imf_type == 'salpeter':
