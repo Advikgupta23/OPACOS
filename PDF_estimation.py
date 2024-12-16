@@ -306,7 +306,7 @@ for i in range(total_stars):
         count+=1
 
 if bin_along_distance_feh == True:
-    print('Hey')
+    print('Heyy :)')
     stars_fully_binned = {}
 
     for count in range(1,len(stars)+1):
