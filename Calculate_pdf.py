@@ -24,7 +24,7 @@ import pandas as pd
 long = 309.1                                 
 lat = 14.97
 path = 'galaxia.dat'
-path_iso = 'test_results.dat'
+path_iso = 'Results.dat'
 bin_size_distance = 200
 bin_size_feh = 50
 bin_size_age = 40
