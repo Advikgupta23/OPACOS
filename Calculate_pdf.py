@@ -7,7 +7,8 @@ import pandas as pd
 import seaborn as sns
 from scipy.integrate import dblquad
 from scipy.integrate import quad
-import math
+import mathimport pandas as pd
+
 
 #(270,-73)
 #(270,4)

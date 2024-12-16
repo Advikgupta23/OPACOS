@@ -7,6 +7,7 @@ from isobuild import func
 from multiprocessing import Pool
 import Extinspiral as exbv_spiral
 import run_extinction as exbv
+import sys
 
 #from constants import age, feh, nstars, imf_slope
 # define array of [Fe/H] from -3 to 0.5 in steps of 0.1
@@ -37,7 +38,7 @@ midi = 10.0  # minimum distance
 madi = 10000.0  # maximum distance
 dedi = 100.0  # distance step
 
-extinction_mode = 'in_plane' # 'in_pkane' for the computation of extinction using extinction due to spiral arms and schlegel maps
+extinction_mode = 'out_plane' # 'in_pkane' for the computation of extinction using extinction due to spiral arms and schlegel maps
                              # 'out_plane' for the computation of extinction using extinction using general schlegel maps
 R_BP = 3.1
 R_RP = 2.2
@@ -50,9 +51,20 @@ R_V = 3.1
 #G_long = 309.1
 #G_lat = 14.97
 
-G_long = 348.0
-G_lat = 18.0
+#G_long = 348.0
+#G_lat = 18.0
 
+#G_long = 12.0
+#G_lat = -63.0
+
+#G_long = 270.0
+#G_lat = -73.0
+
+G_long = float(sys.argv[1])
+G_lat = float(sys.argv[2])
+
+#G_long = 69.0
+#G_lat = -38.0
 def read_columns(filepath):
     
     chunk = pd.read_csv(filepath, sep = '\s+', comment='#', header=None,

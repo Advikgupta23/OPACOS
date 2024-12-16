@@ -1,7 +1,7 @@
 import numpy as np
 import ebf
 
-data = ebf.read('/home/advik/GalaxiaData/Examples/galaxy1.ebf','/')
+data = ebf.read('/Users/advik/GalaxiaData/Examples/galaxy1.ebf','/')
 rad = data['rad']
 age = data['age']
 age = pow(10,data['age'])/pow(10,9)
