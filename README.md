@@ -99,9 +99,9 @@ The model and data plots will be same with this and previous approach so, you ca
 
 I will specifically show an additional plot generated via this approach which is a Q-Q plot comparing the data and  shown below for (l,b) = (270,-73):
 
-<img src="./RESULTS/Data Age vs Framework Model Age Q-Q plot for (270.0,-73.0).png" alt="Project Diagram" width="400" />
+<img src="./RESULTS/Data Age vs Framework Model Age Q-Q plot for (270.0,-73.0).png" alt="Project Diagram" width="600" />
 The above plot compares the Data age and our model framework age PDF.
-<img src="./RESULTS/Data Fe-H vs Framework Model Fe-H Q-Q plot for (270.0,-73.0).png" alt="Project Diagram" width="400" />
+<img src="./RESULTS/Data Fe-H vs Framework Model Fe-H Q-Q plot for (270.0,-73.0).png" alt="Project Diagram" width="600" />
 The above plot compares the Data [Fe/H] and our model framework [Fe/H] PDF.
 
 We can clearly see an agreement in the data distribution and the model framework distribution in above plots.
