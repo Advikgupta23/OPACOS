@@ -69,7 +69,7 @@ The above distributions are calculated around the galactic long. and lat. values
 The above distributions are calculated around the galactic long. and lat. values of (l,b) = (63.0,-12.0). The first distribution above is of the GALAH [Fe/H] distribution whereas the second distribution is the synthetic distribution that we got from our framework.
 Although remember the model distributions are not normalized in the given figures although it does not affect are purpose as long as the shape of distribution accross the range of parameter remains same (In the current system the distributions are normalised).
 
-<h3><u>Second approach (Streamline, faster and easy to use):</u></h3>
+<h3>2. Second approach (Streamline, faster and easy to use):</h3>
 
 This approach is more direct, faster and easier to use for getting model and data distributions along with thier correlations in different portions of sky. For this approach we are also using and comparing the GALAHH [Fe/H] data survey (which is supported by the GAIA DR3 distances and ages data). For this method you have to run only one script by the name **run.sh**. Before coming to this, i will explain the few input arguments that can be modified as per your use in the **run.sh** file :
 
