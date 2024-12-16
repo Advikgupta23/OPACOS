@@ -106,7 +106,7 @@ The above plot compares the Data [Fe/H] and our model framework [Fe/H] PDF.
 
 We can clearly see an agreement in the data distribution and the model framework distribution in above plots.
 
-<h3><u>Progress to be made in future:</u></h3>
+<h2>Progress to be made in future:</h2>
 
 - Although, we see an agreement, we also have to acknowledge that the distributions are sensitive to some loose parameters which are the bin sizes while sampling the GALAXIA model.
 
