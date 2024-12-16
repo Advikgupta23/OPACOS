@@ -26,7 +26,7 @@ Download the zip file in the desired folder.
 
 <h2>Running OPACOS:</h2>
 
-<h3><u>1. First Approach (More interactive and experimental in purpose):</u></h3>
+### **1. First Approach (More interactive and experimental in purpose):**
 
 To Run OPACOS it is quite straightforward (although more streamline process is available in the next section). To run OPACOS we need to do follow the following steps:
 
@@ -66,12 +66,12 @@ The above distributions are calculated around the galactic long. and lat. values
 <img src="./Example_images/63_-12_feh_data.jpeg" alt="Project Diagram" width="400" />
 <img src="./Example_images/63_-12_feh_framework.jpeg" alt="Project Diagram" width="400" />
 
-The above distributions are calculated around the galactic long. and lat. values of (l,b) = (63.0,-12.0). The first distribution above is of the GALAH feh distribution whereas the second distribution is the synthetic distribution that we got from our framework.
+The above distributions are calculated around the galactic long. and lat. values of (l,b) = (63.0,-12.0). The first distribution above is of the GALAH [Fe/H] distribution whereas the second distribution is the synthetic distribution that we got from our framework.
 Although remember the model distributions are not normalized in the given figures although it does not affect are purpose as long as the shape of distribution accross the range of parameter remains same (In the current system the distributions are normalised).
 
 <h3><u>Second approach (Streamline, faster and easy to use):</u></h3>
 
-This approach is more direct, faster and easier to use for getting model and data distributions along with thier correlations in different portions of sky. For this approach we are also using and comparing the GALAHH $[Fe/H]$ data survey (which is supported by the GAIA DR3 distances and ages data). For this method you have to run only one script by the name **run.sh**. Before coming to this, i will explain the few input arguments that can be modified as per your use in the **run.sh** file :
+This approach is more direct, faster and easier to use for getting model and data distributions along with thier correlations in different portions of sky. For this approach we are also using and comparing the GALAHH [Fe/H] data survey (which is supported by the GAIA DR3 distances and ages data). For this method you have to run only one script by the name **run.sh**. Before coming to this, i will explain the few input arguments that can be modified as per your use in the **run.sh** file :
 
 - You can modify the **galactic_latitude** and **galactic_longitude** parameter in the file. This is used to mark the center of the circular region of interest in sky to be analysed by our framework.
 
@@ -85,7 +85,7 @@ This approach is more direct, faster and easier to use for getting model and dat
 
 - If you want to infer the model age distribution set the argument **age_distribution** to be **True** or otherwise **False**.
 
-- If you want to infer the model $[Fe/H]$ distribution set the argument **feh_distribution** to be **True** or otherwise **False**.
+- If you want to infer the model [Fe/H] distribution set the argument **feh_distribution** to be **True** or otherwise **False**.
 
 - Additional note : The selection function is specifically taken for GALAH survey data in our case. If you want to modify it you can check it in **data_cube.py** .
 
@@ -102,7 +102,7 @@ I will specifically show an additional plot generated via this approach which is
 <img src="./RESULTS/Data Age vs Framework Model Age Q-Q plot for (270.0,-73.0).png" alt="Project Diagram" width="400" />
 The above plot compares the Data age and our model framework age PDF.
 <img src="./RESULTS/Data Fe-H vs Framework Model Fe-H Q-Q plot for (270.0,-73.0).png" alt="Project Diagram" width="400" />
-The above plot compares the Data $[Fe/H]$ and our model framework $[Fe/H]$ PDF.
+The above plot compares the Data [Fe/H] and our model framework [Fe/H] PDF.
 
 We can clearly see an agreement in the data distribution and the model framework distribution in above plots.
 
@@ -112,7 +112,7 @@ We can clearly see an agreement in the data distribution and the model framework
 
 - Thus, I am currently working on training the model to determine the loose parameters and this would help us to further rely on the results we get.
 
-- Right now we are only comparing the present Data Age and Model Age, but after training the loose parameters we will also pursue to predict the age or $[Fe/H]$ distributions from our framework as only then we can reliably infer the distributions.
+- Right now we are only comparing the present Data Age and Model Age, but after training the loose parameters we will also pursue to predict the age or [Fe/H] distributions from our framework as only then we can reliably infer the distributions.
 
 
 
