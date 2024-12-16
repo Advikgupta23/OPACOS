@@ -1,6 +1,6 @@
 # OPACOS
 
-The framework developed is helpful in getting probability distribution of parameters of stars in the Milky Way as observed by us synthetically for a section of our Sky. Using above framework we can get the ditribution function of parameters for a section of sky which can be used as a prior in Galactic surveys.
+The framework developed is helpful in getting probability distribution of parameters of stars in the Milky Way as observed by us synthetically for a section of our sky. Using above framework we can get the distribution function of parameters for a section of sky which can be used as a prior in Galactic surveys.
 
 Our framework can be used to get the probability distribution of metallicity or age given priors of (age,distance) or (metallicity, distance) respectively. It accounts for selection effects and generates a probability distribution of parameters as would be seen by us for a section of sky.
 
@@ -15,6 +15,7 @@ Download the zip file in the desired folder.
 - Unzip the file using command:
 
    ```tar gz -xvf OPACOS-main.zip```
+  
 - After doing it follow the documentation as mentioned ahead in-order to install the GALAXIA code: https://galaxia.sourceforge.net/
 - Open the **galaxy1.py** file and change the data variable to:
 
@@ -22,7 +23,9 @@ Download the zip file in the desired folder.
    
   here instead of user you will set the location of the GalaxiaData folder that you installed in the last step. The **galaxy1.py** file uses the GALAXIA code results stored in **galaxy1.ebf** files , reads it and stores the appropriate parameters useful for us in the **galaxia.dat** file.
   
-- Refer to **Survey_DATA.dat** file and install the data files as mentioned in it as it would be used to extract data to be worked on. Install both the files in the main directory that is just outside **Survey_DATA.dat** file.
+- Refer to **Survey_DATA.dat** file and install the data files as mentioned in it, as it would be used to extract data to be worked on. Install both the files in the main directory file of **OPACOS** (Required for 'First Approach' only).
+
+- Refer to **example_myparameterfile** in main directory in order to compare the GALAXIA simulation settings of **myparameterfile** inside the **Examples** folder in **GalaxiaData** directory.
 
 <h2>Running OPACOS:</h2>
 
@@ -30,10 +33,10 @@ Download the zip file in the desired folder.
 
 To Run OPACOS it is quite straightforward (although more streamline process is available in the next section). To run OPACOS we need to do follow the following steps:
 
-- Generate the stars in Milky Way galaxy using GALAXIA. To do that go inside GalaxiaData folder that must have been created as mention in GALAXIA doxumentation. Then go to Examples and open **myparameterfile** in it. Once it is open set the location of the center of the cone that you want to simulate the stars in along with the area that you are interested in. 
-- Make sure that the circular patch option is selected instead of all sky survey in **myparameter** file.
-- After setting that run ```galaxia -r myparameterfile``` command in terminal inside the Examples folder to generate stars of galaxy which is stored in **galaxy1.ebf** file.
-- Now you need to go to the main folder where you downloaded OPACOS and run:
+- Generate the stars in Milky Way galaxy using GALAXIA. To do that go inside **GalaxiaData** folder that must have been created as mention in GALAXIA documentation. Then go to **Examples** and open **myparameterfile** in it. Once it is open set the location of the center of the cone that you want to simulate the stars in along with the area that you are interested in. 
+- Make sure that the circular patch option is selected instead of all sky survey in **myparameterfile** .
+- After setting that run ```galaxia -r myparameterfile``` command in terminal inside the Examples folder to generate stars of our galaxy which are stored in **galaxy1.ebf** file.
+- Now you need to go to the main OPACOS directory and run:
 
   ```python galaxy1.py```
   
@@ -42,12 +45,12 @@ To Run OPACOS it is quite straightforward (although more streamline process is a
   
   ```python prob_grid.py```
   
-- After doing this we are done with the probability calculation grid and it is stored in **results.dat** file. This probability grid will be used along with galaxy data stored in **galaxia.dat** in order to get the required parameter distribution.
+- After doing this we are done with the probability calculation grid and it is stored in **Results.dat** file. This probability grid will be used along with galaxy data stored in **galaxia.dat** in order to get the required parameter distribution.
 
 - Now what is left is to go through the **Read_fits.ipynb** to get the priors as discussed in the introduction. 
 - Go through the **Read_fits.ipynb** and set the center coordinates of the sky for the cone of interest. We also change the area, both the changes are to be done as we have set the settings while simulating galaxy that is same values as that in **myparamterfile**.
 - After going through all the tabs you need to use the **age_distance** and **feh_distance** arrays and replace the old arrays in **Calculate_pdf.py** .
-- **Calculate_pdf.py** code generates both the observed parameter distribution(if you want) and the synthetic paramter distribution through our framework for you too compare and infer from.
+- **Calculate_pdf.py** code generates both the observed parameter distribution (if you want) and the synthetic paramter distribution through our framework for you too compare and infer from.
 - If you want to generate the synthetic age distribution then you need to set **bin_along_distance_feh** value as **True** otherwise **False**.
 - Whereas if you want to generate the synthetic metallcity distribution then you need to set **bin_along_distance_age** value as **True** otherwise **False**.
 - After setting all the above input settings you can simply go to command line and run:
@@ -67,11 +70,11 @@ The above distributions are calculated around the galactic long. and lat. values
 <img src="./Example_images/63_-12_feh_framework.jpeg" alt="Project Diagram" width="400" />
 
 The above distributions are calculated around the galactic long. and lat. values of (l,b) = (63.0,-12.0). The first distribution above is of the GALAH [Fe/H] distribution whereas the second distribution is the synthetic distribution that we got from our framework.
-Although remember the model distributions are not normalized in the given figures although it does not affect are purpose as long as the shape of distribution accross the range of parameter remains same (In the current system the distributions are normalised).
+Remember the model distributions are not normalized in the given figures, although it does not affect our purpose as long as the shape of distribution accross the range of parameter remains same (In the current updated system the distributions are normalised).
 
 <h3>2. Second approach (Streamline, faster and easy to use):</h3>
 
-This approach is more direct, faster and easier to use for getting model and data distributions along with thier correlations in different portions of sky. For this approach we are also using and comparing the GALAHH [Fe/H] data survey (which is supported by the GAIA DR3 distances and ages data). For this method you have to run only one script by the name **run.sh**. Before coming to this, i will explain the few input arguments that can be modified as per your use in the **run.sh** file :
+This approach is more direct, faster and easier to use for getting model and data distributions along with thier correlations in different portions of sky. For this approach we are also using and comparing the GALAH [Fe/H] data survey (which is supported by the GAIA DR3 distances and ages data). For this method you have to run only one script by the name **run.sh**. Before coming to this, i will explain a few input arguments that can be modified as per your use in the **run.sh** file:
 
 - You can modify the **galactic_latitude** and **galactic_longitude** parameter in the file. This is used to mark the center of the circular region of interest in sky to be analysed by our framework.
 
@@ -81,28 +84,28 @@ This approach is more direct, faster and easier to use for getting model and dat
 
 - The argument **imf_type** can be taken either as **'salpeter'**, **'kroupa'** or **'chabrierlognormal'**. According to latest studies, the 'kroupa' and 'chabrierlognormal' IMFs do not overestimate the number of stars in low mass region unlike the 'salpeter' IMF. Thus we usually prefer the 'kroupa' or 'chabrierlognormal' IMfs but it comes at the cost of longer computation time. The IMFs are required to generate stars to be used with isochrones to calculate the probability of observing a star using **data_cube.py** code.
 
-- The argument **extinction_mode** can be either **out_plane** if the region of interest is out of the galactic plane or **in_plane** otherwise. This is used to derive the extinction using different approaches for stars in galactic plane and for stars out of galactic plane.
+- The argument **extinction_mode** can be either **'out_plane'** if the region of interest is out of the galactic plane or **'in_plane'** otherwise. This is used to derive the extinction using different approaches for stars in galactic plane and for stars out of galactic plane.
 
 - If you want to infer the model age distribution set the argument **age_distribution** to be **True** or otherwise **False**.
 
 - If you want to infer the model [Fe/H] distribution set the argument **feh_distribution** to be **True** or otherwise **False**.
 
-- Additional note : The selection function is specifically taken for GALAH survey data in our case. If you want to modify it you can check it in **data_cube.py** .
+- Additional note: The selection function is specifically taken for GALAH survey data in our case. If you want to modify it you can check it in **data_cube.py** .
 
 Now, after modifying the input settings (mentioned above) as per your interest, you can simply run:
 
   ```./run.sh```
 
-After this all the resultant plots will be saved in the **RESULTS** folder.
+Once the run is complete, all the resultant plots will be saved in the **RESULTS** folder.
 
 The model and data plots will be same with this and previous approach so, you can refer to the previous section to see the example plots.
 
-I will specifically show an additional plot generated via this approach which is a Q-Q plot comparing the data and  shown below for (l,b) = (270,-73):
+I will specifically show an additional plot generated via this approach which is a Q-Q plot comparing the data and framework distributions shown below for (l,b) = (270,-73):
 
 <img src="./RESULTS/Data Age vs Framework Model Age Q-Q plot for (270.0,-73.0).png" alt="Project Diagram" width="600" />
-The above plot compares the Data age and our model framework age PDF.
+The above plot compares the data age and our model framework age PDF.
 <img src="./RESULTS/Data Fe-H vs Framework Model Fe-H Q-Q plot for (270.0,-73.0).png" alt="Project Diagram" width="600" />
-The above plot compares the Data [Fe/H] and our model framework [Fe/H] PDF.
+The above plot compares the data [Fe/H] and our model framework [Fe/H] PDF.
 
 We can clearly see an agreement in the data distribution and the model framework distribution in above plots.
 
