@@ -26,7 +26,7 @@ Download the zip file in the desired folder.
 
 <h2>Running OPACOS:</h2>
 
-<h3>1. First Approach (More interactive and experimental in purpose):</h3>
+<h3><u>1. First Approach (More interactive and experimental in purpose):</u></h3>
 
 To Run OPACOS it is quite straightforward (although more streamline process is available in the next section). To run OPACOS we need to do follow the following steps:
 
@@ -69,7 +69,7 @@ The above distributions are calculated around the galactic long. and lat. values
 The above distributions are calculated around the galactic long. and lat. values of (l,b) = (63.0,-12.0). The first distribution above is of the GALAH feh distribution whereas the second distribution is the synthetic distribution that we got from our framework.
 Although remember the model distributions are not normalized in the given figures although it does not affect are purpose as long as the shape of distribution accross the range of parameter remains same (In the current system the distributions are normalised).
 
-<h3>Second approach (Streamline, faster and easy to use):</h3>
+<h3><u>Second approach (Streamline, faster and easy to use):</u></h3>
 
 This approach is more direct, faster and easier to use for getting model and data distributions along with thier correlations in different portions of sky. For this approach we are also using and comparing the GALAHH $[Fe/H]$ data survey (which is supported by the GAIA DR3 distances and ages data). For this method you have to run only one script by the name **run.sh**. Before coming to this, i will explain the few input arguments that can be modified as per your use in the **run.sh** file :
 
@@ -99,14 +99,14 @@ The model and data plots will be same with this and previous approach so, you ca
 
 I will specifically show an additional plot generated via this approach which is a Q-Q plot comparing the data and  shown below for (l,b) = (270,-73):
 
-<img src="./RESULTS/Data\ Age\ vs\ Framework\ Model\ Age\ Q-Q\ plot\ for\ \(270.0,-73.0\).png" alt="Project Diagram" width="400" />
+<img src="./RESULTS/Data Age vs Framework Model Age Q-Q plot for (270.0,-73.0).png" alt="Project Diagram" width="400" />
 The above plot compares the Data age and our model framework age PDF.
-<img src="./RESULTS/Data\ Fe-H\ vs\ Framework\ Model\ Fe-H\ Q-Q\ plot\ for\ \(270.0,-73.0\).png" alt="Project Diagram" width="400" />
+<img src="./RESULTS/Data Fe-H vs Framework Model Fe-H Q-Q plot for (270.0,-73.0).png" alt="Project Diagram" width="400" />
 The above plot compares the Data $[Fe/H]$ and our model framework $[Fe/H]$ PDF.
 
 We can clearly see an agreement in the data distribution and the model framework distribution in above plots.
 
-<h3>Progress to be made in future:</h3>
+<h3><u>Progress to be made in future:</u></h3>
 
 - Although, we see an agreement, we also have to acknowledge that the distributions are sensitive to some loose parameters which are the bin sizes while sampling the GALAXIA model.
 
