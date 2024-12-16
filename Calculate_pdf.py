@@ -10,7 +10,6 @@ from scipy.integrate import quad
 import math
 import pandas as pd
 
-
 #(270,-73)
 #(270,4)
 #(69,-38)
