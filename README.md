@@ -26,7 +26,7 @@ Download the zip file in the desired folder.
 
 <h2>Running OPACOS:</h2>
 
-### **1. First Approach (More interactive and experimental in purpose):**
+<h3 style="text-decoration: underline;">1. First Approach (More interactive and experimental in purpose):</u></h3>
 
 To Run OPACOS it is quite straightforward (although more streamline process is available in the next section). To run OPACOS we need to do follow the following steps:
 
