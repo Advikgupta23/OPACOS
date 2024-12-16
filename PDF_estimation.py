@@ -30,7 +30,6 @@ from ipyaladin import Aladin    # version >=0.3.0
 #(63,-6)
 #*(12,-63)
 
-
 # specific_feh = -0.5  # Example value for feh -1.5
 # specific_distance = 5200  # Example value for distance 210
 long = float(sys.argv[1])                                 
@@ -42,8 +41,8 @@ bin_size_distance = 200
 bin_size_feh = 50
 bin_size_age = 40
 bin_along_distance = False 
-bin_along_distance_feh = False
-bin_along_distance_age = True
+bin_along_distance_feh = True if sys.argv[3] == 'True' else False
+bin_along_distance_age = True if sys.argv[4] == 'True' else False
 
 
 # the catalogue name in VizieR
@@ -586,28 +585,30 @@ if bin_along_distance_feh == True:
     
     # Plot the Q-Q plot
     plt.figure(figsize=(8, 6),dpi=300)
-    plt.scatter(theoretical_quantiles, data_quantiles, s=5, color='orange', label='Data vs. Theoretical')
+    plt.scatter(theoretical_quantiles, data_quantiles, s=5, color='orange', label='Data vs. Framework Model')
     plt.plot(theoretical_quantiles, theoretical_quantiles, 'b--', label='Perfect Match (y=x)')
-    plt.title('Q-Q Plot: Data vs. Theoretical')
-    plt.xlabel('Theoretical Quantiles')
+    plt.title('Q-Q Plot: Data vs. Framework Model Age Distribution')
+    plt.xlabel('Framework Model Quantiles')
     plt.ylabel('Data Quantiles')
     plt.legend()
     plt.grid(True)
-    plt.savefig(f'/Users/advik/OPACOS/RESULTS/Data Age vs Theoretical Age Q-Q plot for ({long},{lat}).png',dpi=300)
+    plt.savefig(f'/Users/advik/OPACOS/RESULTS/Data Age vs Framework Model Age Q-Q plot for ({long},{lat}).png',dpi=300)
     #plt.show()
         
     # print(age_peak,age_median_peak,age_16_percent,age_84_percent)
     plt.figure(figsize=(7,14))
     plt.subplot(211)
-    plt.plot(age,final_prob,label='Observed Selection Age', color= 'blue')
-    plt.subplot(212)    
-    plt.plot(age,final_prob_model,label='Model Age', color = 'red')
+    plt.plot(age,final_prob,label='Framework Age', color= 'blue')
     plt.xlabel('Age')
-    plt.ylabel('Probability of Observing a Star')
+    plt.ylabel('Probability of Observing a Star with our Framework')    
+    plt.subplot(212)    
+    plt.plot(age,final_prob_model,label='GALAXIA Age', color = 'red')
+    plt.xlabel('Age')
+    plt.ylabel('Probability of Spawning a Star using GALAXIA')
     plt.legend()
     plt.grid()
     # plt.scatter(age_peak,gaia_age)
-    plt.savefig(f'/Users/advik/OPACOS/RESULTS/Theoretical Inferred Age and GALAXIA Age PDF for ({long},{lat}).png')
+    plt.savefig(f'/Users/advik/OPACOS/RESULTS/Framework Inferred Age and GALAXIA Age PDF for ({long},{lat}).png')
     #plt.show()
 
     data_age = pd.DataFrame(filtered_age)
@@ -768,15 +769,15 @@ if bin_along_distance_age == True:
     
     # Plot the Q-Q plot
     plt.figure(figsize=(8, 6),dpi=300)
-    plt.scatter(theoretical_quantiles, data_quantiles, s=5, color='orange', label='Data vs. Theoretical')
+    plt.scatter(theoretical_quantiles, data_quantiles, s=5, color='orange', label='Data vs. Framework Model')
     plt.plot(theoretical_quantiles, theoretical_quantiles, 'b--', label='Perfect Match (y=x)')
-    plt.title('Q-Q Plot: Data vs. Theoretical')
-    plt.xlabel('Theoretical Quantiles')
+    plt.title('Q-Q Plot: Data vs. Framework Model [Fe/H] Distribution')
+    plt.xlabel('Framework Model Quantiles')
     plt.ylabel('Data Quantiles')
     plt.legend()
     plt.grid(True)
     fe_h = "Fe-H"
-    plt.savefig(f'/Users/advik/OPACOS/RESULTS/Data {fe_h} vs Theoretical {fe_h} Q-Q plot for ({long},{lat}).png',dpi=300)
+    plt.savefig(f'/Users/advik/OPACOS/RESULTS/Data {fe_h} vs Framework Model {fe_h} Q-Q plot for ({long},{lat}).png',dpi=300)
     #plt.show()
     
     #print(feh_peak,feh_median_peak,feh_16_percent,feh_84_percent)
@@ -786,13 +787,15 @@ if bin_along_distance_age == True:
     plt.figure(figsize=(7,14))
     plt.subplot(211)
     plt.plot(feh,final_prob,label='Observed Selection metallicity',color = 'blue')
-    plt.subplot(212)    
-    plt.plot(feh,final_prob_model,label='Model Metallicity', color = 'red')
     plt.xlabel('[Fe/H]')
-    plt.ylabel('Probability of Observing a Star')
+    plt.ylabel('Probability of Observing a Star with our Framework')    
+    plt.subplot(212)    
+    plt.plot(feh,final_prob_model,label='GALAXIA Metallicity', color = 'red')
+    plt.xlabel('[Fe/H]')
+    plt.ylabel('Probability of Spawning a Star using GALAXIA')
     plt.legend()
     plt.grid()
-    plt.savefig(f'/Users/advik/OPACOS/RESULTS/Theoretical Inferred {fe_h} and GALAXIA {fe_h} PDF for ({long},{lat}).png')
+    plt.savefig(f'/Users/advik/OPACOS/RESULTS/Framework Inferred {fe_h} and GALAXIA {fe_h} PDF for ({long},{lat}).png')
     #plt.show()
 
     data_feh = pd.DataFrame(filtered_feh)

@@ -7,7 +7,8 @@ import pandas as pd
 import seaborn as sns
 from scipy.integrate import dblquad
 from scipy.integrate import quad
-import mathimport pandas as pd
+import math
+import pandas as pd
 
 
 #(270,-73)
@@ -479,21 +480,23 @@ if bin_along_distance_feh == True:
     x = np.zeros(len(survey_prob[0]))
     for i in range(len(survey_prob)):
         x = x + survey_prob[i]
-    final_prob = x/len(survey_prob)
+    final_prob = x/(np.trapz(x,age))
 
     y = np.zeros(len(survey_prob_model[0]))
     for i in range(len(survey_prob_model)):
         y = y + survey_prob_model[i]
-    final_prob_model = y/len(survey_prob_model)
+    final_prob_model = y/(np.trapz(y,age))
 
     print(age_peak,age_median_peak,age_16_percent,age_84_percent)
     plt.figure(figsize=(7,14))
     plt.subplot(211)
     plt.plot(age,final_prob,label='Observed Selection Age', color= 'blue')
-    plt.subplot(212)    
-    plt.plot(age,final_prob_model,label='Model Age', color = 'red')
     plt.xlabel('Age')
-    plt.ylabel('Probability of Observing a Star')
+    plt.ylabel('Probability of Observing a Star with our Framework')
+    plt.subplot(212)    
+    plt.plot(age,final_prob_model,label='GALAXIA Age', color = 'red')
+    plt.xlabel('Age')
+    plt.ylabel('Probability of Spawning a Star using GALAXIA')
     plt.legend()
     plt.grid()
 # plt.scatter(age_peak,gaia_age)
@@ -616,21 +619,23 @@ if bin_along_distance_age == True:
     x = np.zeros(len(survey_prob[0]))
     for i in range(len(survey_prob)):
         x = x + survey_prob[i]
-    final_prob = x/len(survey_prob)
+    final_prob = x/(np.trapz(x,feh))
 
     y = np.zeros(len(survey_prob_model[0]))
     for i in range(len(survey_prob_model)):
         y = y + survey_prob_model[i]
-    final_prob_model = y/len(survey_prob_model)
+    final_prob_model = y/(np.trapz(y,feh))
 
     print(feh_peak,feh_median_peak,feh_16_percent,feh_84_percent)
     plt.figure(figsize=(7,14))
     plt.subplot(211)
-    plt.plot(feh,final_prob,label='Observed Selection metallicity',color = 'blue')
-    plt.subplot(212)    
-    plt.plot(feh,final_prob_model,label='Model Metallicity', color = 'red')
+    plt.plot(feh,final_prob,label='Observed Selection Metallicity',color = 'blue')
     plt.xlabel('[Fe/H]')
-    plt.ylabel('Probability of Observing a Star')
+    plt.ylabel('Probability of Observing a Star with our Framework')    
+    plt.subplot(212)    
+    plt.plot(feh,final_prob_model,label='GALAXIA Metallicity', color = 'red')
+    plt.xlabel('[Fe/H]')
+    plt.ylabel('Probability of Spawning a Star using GALAXIA')
     plt.legend()
     plt.grid()
 # plt.scatter(age_peak,gaia_age)

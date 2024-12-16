@@ -19,11 +19,11 @@ age = np.arange(0.5, 14.5, 0.125)
 
 nstars = 100000  # number of stars
 imf_slope = -2.35  # IMF slope. -2.35 is Salpeter pure power-law
-imf_type = 'kroupa' # You can use three IMF systems: * salpeter 
-                      #                                * kroupa  
-                      #                                * chabrierlognormal
+imf_type = sys.argv[4] # You can use three IMF systems: * salpeter 
+                       #                                * kroupa  
+                       #                                * chabrierlognormal
 
-Phot_sys = '2mass' # You can use * 'GAIA_EDR3' or * '2mass'
+Phot_sys = sys.argv[3] # You can use * 'GAIA_EDR3' or * '2mass'
                              
 fai_lim = 14.0  # faint magnitude limit 20.0 19.0
 bri_lim = 12.0   # bright magnitude limit 3.0 12.0 
@@ -38,8 +38,8 @@ midi = 10.0  # minimum distance
 madi = 10000.0  # maximum distance
 dedi = 100.0  # distance step
 
-extinction_mode = 'out_plane' # 'in_pkane' for the computation of extinction using extinction due to spiral arms and schlegel maps
-                             # 'out_plane' for the computation of extinction using extinction using general schlegel maps
+extinction_mode = sys.argv[5] # 'in_pkane' for the computation of extinction using extinction due to spiral arms and schlegel maps
+                              # 'out_plane' for the computation of extinction using extinction using general schlegel maps
 R_BP = 3.1
 R_RP = 2.2
 R_G = 2.7
