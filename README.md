@@ -115,7 +115,7 @@ We can clearly see an agreement in the data distribution and the model framework
 
 - Thus, I am currently working on training the model to determine the loose parameters and this would help us to further rely on the results we get.
 
-- Right now we are only comparing the present Data Age and Model Age, but after training the loose parameters we will also pursue to predict the age or [Fe/H] distributions from our framework as only then we can reliably infer the distributions.
+- Right now we are only comparing the present Data Age and Model Age (and similarly for [Fe/H]), but after training the loose parameters we will also pursue to predict the age or [Fe/H] distributions from our framework as only then we can reliably infer the distributions.
 
 
 
