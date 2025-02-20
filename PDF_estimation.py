@@ -161,7 +161,7 @@ feh_84_percent = []
 
 def read_columns(filepath):
     
-    chunk = pd.read_csv(filepath, sep = '\s+', comment='#', header=None,
+    chunk = pd.read_csv(filepath, sep = r'\s+', comment='#', header=None,
                          names = ['mini','mfin','age','feh','distance','l','b','px','py','pz','popid','exbv_schlegel','log_g'],
                          usecols = [0,1,2,3,4,5,6,7,8,9,10,11,12], chunksize = 200)
     data = pd.concat(chunk)
@@ -213,7 +213,7 @@ def calculate_conditional_pdf(parameter_values):
 
 def read_iso_file(file_path):
 	# Read the file into a pandas DataFrame
-    chunk = pd.read_csv(file_path, sep='\s+', comment='#', header=None,
+    chunk = pd.read_csv(file_path, sep=r'\s+', comment='#', header=None,
                         names=['Age', 'feh', 'distance', 'prob'],
                         usecols=[0, 1, 2, 3],chunksize=200)
     data_iso = pd.concat(chunk)

@@ -69,7 +69,7 @@ G_lat = float(sys.argv[2])
 
 def read_columns(filepath):
     
-    chunk = pd.read_csv(filepath, sep = '\s+', comment='#', header=None,
+    chunk = pd.read_csv(filepath, sep = r'\s+', comment='#', header=None,
                          names = ['mini','mfin','age','feh','distance','l','b','px','py','pz','popid','exbv_schlegel'],
                          usecols = [0,1,2,3,4,5,6,7,8,9,10,11], chunksize = 200)
     data = pd.concat(chunk)
