@@ -48,13 +48,27 @@ bin_along_distance_age = True if sys.argv[4] == 'True' else False
 # the catalogue name in VizieR
 CATALOGUE = "J/MNRAS/478/4513"
 
-# each resource in the VO has an identifier, called ivoid. For vizier catalogs,
-# the VO ids can be constructed like this:
+## each resource in the VO has an identifier, called ivoid. For vizier catalogs,
+## the VO ids can be constructed like this:
+#catalogue_ivoid = f"ivo://CDS.VizieR/{CATALOGUE}"
+## the actual query to the registry
+#voresource = registry.search(ivoid=catalogue_ivoid)[0]
+
+#conesearch_center = (long, lat)
+#conesearch_records = voresource.get_service("conesearch").search(
+#    pos=conesearch_center,
+#    sr=conesearch_radius,)
+
 catalogue_ivoid = f"ivo://CDS.VizieR/{CATALOGUE}"
 # the actual query to the registry
 voresource = registry.search(ivoid=catalogue_ivoid)[0]
+coord_gal = SkyCoord(l=long*u.deg, b=lat*u.deg, frame='galactic')
 
-conesearch_center = (long, lat)
+# Convert to Equatorial (ICRS = RA/Dec)
+ra = coord_gal.icrs.ra.deg
+dec = coord_gal.icrs.dec.deg
+ra, dec
+conesearch_center = (ra, dec)
 conesearch_records = voresource.get_service("conesearch").search(
     pos=conesearch_center,
     sr=conesearch_radius,)
